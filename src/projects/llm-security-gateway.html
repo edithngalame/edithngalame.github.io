@@ -11,7 +11,7 @@
     <nav class="nav" aria-label="Main">
       <a href="../index.html#work">Work</a>
       <a href="https://github.com/edithngalame/llm-security-gateway">Code</a>
-      <a href="https://huggingface.co/spaces/edithngalame/llm-security-gateway">Live demo</a>
+      <a href="#demo">Watch it run</a>
     </nav>
   </div>
 </header>
@@ -28,7 +28,7 @@
       <div class="fact"><span class="eyebrow">Stack</span><span>Python · PyTorch · ONNX Runtime · FastAPI · Hugging Face</span></div>
     </div>
     <div class="actions">
-      <a class="btn primary" href="#try">Try it</a>
+      <a class="btn primary" href="#demo">Watch it run</a>
       <a class="btn" href="https://github.com/edithngalame/llm-security-gateway">Code on GitHub</a>
       <a class="btn" href="https://huggingface.co/datasets/edithngalame/prompt-injection-en-es">Dataset</a>
       <a class="btn" href="https://huggingface.co/edithngalame/mdeberta-v3-prompt-injection-en-es">Model</a>
@@ -52,7 +52,7 @@
       <a href="#decisions">Decisions</a>
       <a href="#outcome">Outcome</a>
       <a href="#reflection">Reflection</a>
-      <a href="#try">Try it</a>
+      <a href="#demo">See it run</a>
     </nav>
 
     <article>
@@ -153,17 +153,19 @@
         <p>Next for this project: an AI email agent that gets hijacked without the gateway and stays safe with it, using taint tracking and tool permissions.</p>
       </section>
 
-      <section class="chapter" id="try">
-        <p class="eyebrow">Try it</p>
-        <h2>Test your own message</h2>
-        <p>The live demo runs the real gateway code: rules first, then the classifier. Try something in Spanish.</p>
-        <div id="demo-slot">
-          <div class="links-grid">
-            <a class="link-card" href="https://huggingface.co/spaces/edithngalame/llm-security-gateway"><span class="mono">Hugging Face Space</span><strong>Open the live demo →</strong></a>
-            <a class="link-card" href="https://github.com/edithngalame/llm-security-gateway"><span class="mono">GitHub</span><strong>Code, notebooks, releases</strong></a>
-            <a class="link-card" href="https://huggingface.co/edithngalame/mdeberta-v3-prompt-injection-en-es"><span class="mono">Model card</span><strong>Results and limitations</strong></a>
-            <a class="link-card" href="https://edithngalame.github.io/llm-security-gateway/report/"><span class="mono">Backtest report</span><strong>Interactive charts</strong></a>
-          </div>
+      <section class="chapter" id="demo">
+        <p class="eyebrow">See it run</p>
+        <h2>The gateway, live</h2>
+        <p>The real-time dashboard while a traffic simulator sends attacks and harmless messages in English and Spanish. Every row is a decision, with the layer that made it.</p>
+        <figure class="demo-video" data-video>
+          <video src="../assets/demo.mp4" controls muted loop playsinline preload="metadata" aria-label="Screen recording of the gateway dashboard blocking attacks"></video>
+        </figure>
+        <p>Want to run it yourself? The <a href="https://github.com/edithngalame/llm-security-gateway#add-the-classifier">repository README</a> has the commands: install, switch the classifier on, start the dashboard.</p>
+        <div class="links-grid">
+          <a class="link-card" href="https://github.com/edithngalame/llm-security-gateway"><span class="mono">GitHub</span><strong>Code, notebooks, releases</strong></a>
+          <a class="link-card" href="https://huggingface.co/edithngalame/mdeberta-v3-prompt-injection-en-es"><span class="mono">Model card</span><strong>Results and limitations</strong></a>
+          <a class="link-card" href="https://huggingface.co/datasets/edithngalame/prompt-injection-en-es"><span class="mono">Dataset</span><strong>18,312 texts, EN + ES</strong></a>
+          <a class="link-card" href="https://edithngalame.github.io/llm-security-gateway/report/"><span class="mono">Backtest report</span><strong>Interactive charts</strong></a>
         </div>
       </section>
     </article>
@@ -243,16 +245,8 @@
     document.querySelectorAll(".chapter").forEach(function (s) { io.observe(s); });
   }
 
-  // On the published site, embed the live demo; elsewhere keep the links
-  if (/\.github\.io$/.test(location.hostname)) {
-    var f = document.createElement("iframe");
-    f.className = "demo-frame";
-    f.src = "https://edithngalame-llm-security-gateway.hf.space";
-    f.title = "LLM Security Gateway live demo";
-    f.loading = "lazy";
-    var slot = document.getElementById("demo-slot");
-    slot.insertBefore(f, slot.firstChild);
-    f.insertAdjacentHTML("afterend", '<div style="height:16px"></div>');
-  }
+  // Hide the video frame if the recording isn't there yet
+  var v = document.querySelector("[data-video] video");
+  if (v) v.addEventListener("error", function () { v.parentNode.hidden = true; });
 })();
 </script>

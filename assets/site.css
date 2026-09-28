@@ -297,3 +297,7 @@ a.project:hover { transform: translateY(-2px); border-color: var(--accent); text
 .email { font-size: clamp(1.05rem, 2.4vw, 1.4rem); color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--mark); overflow-wrap: anywhere; user-select: all; }
 .email:hover { color: var(--accent); }
 .btn.copy { cursor: pointer; font-size: 0.85rem; padding: 8px 14px; }
+
+/* demo recording */
+.demo-video { margin: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--paper); box-shadow: var(--shadow); }
+.demo-video video { display: block; width: 100%; height: auto; max-width: 100%; }
