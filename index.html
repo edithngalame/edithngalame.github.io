@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Edith Ngalame</title>
+<meta name="description" content="Edith Ngalame: ML engineer focused on AI security. Case studies with live demos, published datasets and models.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><span></span></span>Edith Ngalame</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <p class="eyebrow">ML engineer · AI security · Canary Islands</p>
+    <h1>I build machine learning that holds up <em>against attackers</em>.</h1>
+    <p class="lede">I have a bachelor's in cybersecurity and I'm doing a master's in AI. My projects sit where the two meet: I design the attack, build the dataset, train the model, and measure where it still fails. I work in English and Spanish.</p>
+    <div class="actions">
+      <a class="btn primary" href="projects/llm-security-gateway.html">Read the featured case study <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn" href="https://huggingface.co/spaces/edithngalame/llm-security-gateway">Try the live demo</a>
+      <a class="btn" href="https://github.com/edithngalame">GitHub</a>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="demo-title">
+    <div class="stack">
+      <div class="section-head" style="margin-bottom:0">
+        <h2 id="demo-title">Would this message hijack an AI assistant?</h2>
+        <p class="muted">Pick a message. The highlighted part is the attack.</p>
+      </div>
+      <div class="inspector" data-inspector>
+        <div class="insp-bar">
+          <span class="eyebrow">LLM Security Gateway · message inspector</span>
+          <a class="mono" style="font-size:.82rem" href="projects/llm-security-gateway.html">How it works →</a>
+        </div>
+        <div class="insp-tabs" role="tablist" aria-label="Example messages"></div>
+        <div class="insp-body">
+          <div class="insp-msg">
+            <div class="insp-meta"></div>
+            <p class="insp-text" aria-live="polite"></p>
+          </div>
+          <div class="insp-verdicts"></div>
+        </div>
+        <p class="insp-foot">Real decisions recorded from the gateway on 28 Sep 2026. v0.1 = rules only · v0.3 = rules + my fine-tuned classifier.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="work" aria-labelledby="work-title">
+    <div class="section-head">
+      <h2 id="work-title">Work</h2>
+      <p class="muted">Each project is a case study: problem, research, decisions, results, and what I'd change.</p>
+    </div>
+    <div class="projects">
+      <a class="project" href="projects/llm-security-gateway.html">
+        <span class="status live">● Released · v0.3</span>
+        <h3>LLM Security Gateway</h3>
+        <p>Stops prompt injection in English and Spanish before it reaches an AI model, including attacks hidden inside emails and documents.</p>
+        <p class="figure num">56% → 97%<small>attacks caught after adding my fine-tuned classifier to the rules</small></p>
+        <div class="tags"><span class="chip">PyTorch</span><span class="chip">mDeBERTa-v3</span><span class="chip">ONNX Runtime</span><span class="chip">FastAPI</span></div>
+      </a>
+      <div class="project upcoming">
+        <span class="status next">Coming next</span>
+        <h3>Intrusion detection, end to end</h3>
+        <p>A network intrusion detector with the full MLOps loop: data versioning, training pipeline, drift monitoring and retraining.</p>
+        <div class="tags"><span class="chip">MLOps</span><span class="chip">Network security</span></div>
+      </div>
+      <div class="project upcoming">
+        <span class="status next">Planned</span>
+        <h3>Secure RAG assistant</h3>
+        <p>A document Q&amp;A assistant built to resist poisoned documents and data leaks, protected by the gateway above.</p>
+        <div class="tags"><span class="chip">RAG</span><span class="chip">LLM security</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="about" aria-labelledby="about-title">
+    <div class="about">
+      <div class="stack">
+        <h2 id="about-title">About</h2>
+        <p>I came to machine learning from security, so I test my own work the way an attacker would. When a number looks too good, I go looking for the shortcut behind it.</p>
+        <p>In my first project that habit found two bugs in my own dataset: the validation split had no emails, and a model had memorised 25 harmless sentences. Fixing them made the scores lower and the results true.</p>
+        <p>I publish the datasets, models and notebooks behind every result, so anyone can check them.</p>
+      </div>
+      <div class="skills">
+        <div class="skill-group"><h3>Machine learning</h3><p>Fine-tuning transformers, evaluation design, dataset construction, baselines, error analysis, model export (ONNX)</p></div>
+        <div class="skill-group"><h3>Security</h3><p>Threat modelling (OWASP Top 10 for LLMs, MITRE ATLAS), prompt injection, red-team test sets, detection engineering</p></div>
+        <div class="skill-group"><h3>Engineering</h3><p>Python, PyTorch, FastAPI, ONNX Runtime, pytest, GitHub Actions, Hugging Face, Google Colab</p></div>
+        <div class="skill-group"><h3>Languages</h3><p>English, Spanish</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <span>Edith Dione Ngalame Atechkeng · open to ML engineering roles and freelance AI security reviews</span>
+    <span class="contact-links">
+      <a href="https://github.com/edithngalame">GitHub</a>
+      <a href="https://huggingface.co/edithngalame">Hugging Face</a>
+      <!-- LINKEDIN: add <a href="https://www.linkedin.com/in/…">LinkedIn</a> here -->
+    </span>
+  </div>
+</footer>
+<script src="assets/inspector.js"></script>
+</body>
+</html>
