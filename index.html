@@ -26,11 +26,12 @@
   <section class="wrap hero">
     <p class="eyebrow">ML engineer · AI security · Canary Islands</p>
     <h1>I build machine learning that holds up <em>against attackers</em>.</h1>
-    <p class="lede">I have a bachelor's in cybersecurity and I'm doing a master's in AI. My projects sit where the two meet: I design the attack, build the dataset, train the model, and measure where it still fails. I work in English and Spanish.</p>
+    <p class="lede">I have a bachelor's in cybersecurity and I'm doing a master's in AI. I build machine learning systems end to end, from the data to the deployed model, and I evaluate them the way a security engineer would: fair baselines, held-out tests, and a clear record of where they still fail.</p>
     <div class="actions">
       <a class="btn primary" href="projects/llm-security-gateway.html">Read the featured case study <span class="arrow" aria-hidden="true">→</span></a>
       <a class="btn" href="https://huggingface.co/spaces/edithngalame/llm-security-gateway">Try the live demo</a>
       <a class="btn" href="https://github.com/edithngalame">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/edith-n-431ab2209">LinkedIn</a>
     </div>
   </section>
 
@@ -104,16 +105,48 @@
   </section>
 </main>
 
-<footer class="site-foot" id="contact">
+<section class="wrap section contact" id="contact" aria-labelledby="contact-title">
+  <div class="stack">
+    <h2 id="contact-title">Get in touch</h2>
+    <p>I'm open to ML engineering roles and freelance AI security reviews.</p>
+    <div class="email-row">
+      <a class="email mono" href="mailto:ngalameatechkeng@gmail.com">ngalameatechkeng@gmail.com</a>
+      <button class="btn copy" type="button" data-copy="ngalameatechkeng@gmail.com">Copy email</button>
+    </div>
+    <div class="actions">
+      <a class="btn" href="https://www.linkedin.com/in/edith-n-431ab2209">LinkedIn</a>
+      <a class="btn" href="https://github.com/edithngalame">GitHub</a>
+      <a class="btn" href="https://huggingface.co/edithngalame">Hugging Face</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
   <div class="wrap">
-    <span>Edith Dione Ngalame Atechkeng · open to ML engineering roles and freelance AI security reviews</span>
+    <span>Edith Dione Ngalame Atechkeng</span>
     <span class="contact-links">
+      <a href="mailto:ngalameatechkeng@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/edith-n-431ab2209">LinkedIn</a>
       <a href="https://github.com/edithngalame">GitHub</a>
       <a href="https://huggingface.co/edithngalame">Hugging Face</a>
-      <!-- LINKEDIN: add <a href="https://www.linkedin.com/in/…">LinkedIn</a> here -->
     </span>
   </div>
 </footer>
+<script>
+document.querySelectorAll("[data-copy]").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var text = b.getAttribute("data-copy"), label = b.textContent;
+    function done(msg) { b.textContent = msg; setTimeout(function () { b.textContent = label; }, 1800); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done("Copied"); }, function () { select(); });
+    } else { select(); }
+    function select() {
+      var r = document.createRange(); r.selectNodeContents(document.querySelector(".email"));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done("Selected: press Ctrl+C");
+    }
+  });
+});
+</script>
 <script src="assets/inspector.js"></script>
 </body>
 </html>

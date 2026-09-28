@@ -290,3 +290,10 @@ a.project:hover { transform: translateY(-2px); border-color: var(--accent); text
 .cs-layout > * { min-width: 0; }
 .insp-foot { max-width: none; }
 @media (max-width: 900px) { .cs-layout { grid-template-columns: minmax(0, 1fr); } }
+
+/* contact */
+.contact { border-top: 1px solid var(--line); }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.email { font-size: clamp(1.05rem, 2.4vw, 1.4rem); color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--mark); overflow-wrap: anywhere; user-select: all; }
+.email:hover { color: var(--accent); }
+.btn.copy { cursor: pointer; font-size: 0.85rem; padding: 8px 14px; }
