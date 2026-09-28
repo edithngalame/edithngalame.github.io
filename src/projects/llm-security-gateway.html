@@ -158,7 +158,8 @@
         <h2>The gateway, live</h2>
         <p>The real-time dashboard while a traffic simulator sends attacks and harmless messages in English and Spanish. Every row is a decision, with the layer that made it.</p>
         <figure class="demo-video" data-video>
-          <video src="../assets/demo.mp4" controls muted loop playsinline preload="metadata" aria-label="Screen recording of the gateway dashboard blocking attacks"></video>
+          <video src="../assets/demo.mp4" poster="../assets/demo-poster.jpg" autoplay controls muted loop playsinline preload="metadata" aria-label="Screen recording of the gateway dashboard blocking attacks"></video>
+          <figcaption>Unedited 30-second recording on my laptop. It includes the model's mistakes: it blocks two harmless questions about prompt injection (the over-defense described above) and lets one Spanish attack hidden in a report through. The latency tile is covered because the screen recorder was sharing the CPU; measured latency is in the Outcome section.</figcaption>
         </figure>
         <p>Want to run it yourself? The <a href="https://github.com/edithngalame/llm-security-gateway#add-the-classifier">repository README</a> has the commands: install, switch the classifier on, start the dashboard.</p>
         <div class="links-grid">
